@@ -36,8 +36,8 @@ namespace Console_OpenAi
 					{
 						request.Headers.TryAddWithoutValidation("Authorization", "Bearer " + opeAIKey);
 						request.Content = new StringContent("{\n  \"prompt\": \"" + input + "\",\n  \"temperature\": " +
-															temperature.ToString(CultureInfo.InvariantCulture) + ",\n  \"max_tokens\": " + tokens + ",\n  \"top_p\": " + topP +
-															",\n  \"frequency_penalty\": " + frequencyPenalty + ",\n  \"presence_penalty\": " + presencePenalty + "\n}");
+								temperature.ToString(CultureInfo.InvariantCulture) + ",\n  \"max_tokens\": " + tokens + ",\n  \"top_p\": " + topP +
+								",\n  \"frequency_penalty\": " + frequencyPenalty + ",\n  \"presence_penalty\": " + presencePenalty + "\n}");
 
 						request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
 
@@ -48,7 +48,6 @@ namespace Console_OpenAi
 
 						if (dynObj != null)
 							return dynObj.choices[0].text.ToString();
-
 					}
 				}
 			}
